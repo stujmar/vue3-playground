@@ -1,6 +1,6 @@
 <template>
   <div class="m-4 p-4 shadaow border">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <div>{{ product }}</div>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
