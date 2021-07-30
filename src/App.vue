@@ -6,13 +6,13 @@
     </div>
   <div v-for="product in data" :key="product.name">
     {{ product.name }}
+    <p v-if="product.inventory >= 10">{{product.inventory}} In Stock</p>
+    <p v-else-if="product.inventory > 0 && product.inventory < 10">Only {{product.inventory}} Left. Running Low</p>
+    <p v-else>Out of Stock</p>
   </div>
      <div class="border-2 border-red-300 w-max">
       <img width="200" v-bind:src="data[0].image" />
     <div>{{ data[0].name }}</div>
-    <p v-if="product.inventory >= 10">In Stock</p>
-    <p v-else-if="product.inStock >= 5">Running Low</p>
-    <p v-else>Out of Stock</p>
     </div>
     
     <HelloWorld msg="Welcome to Your Vue.js App"/>
