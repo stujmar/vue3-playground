@@ -8,6 +8,8 @@
      <div class="border-2 border-red-300 w-max">
       <img width="200" v-bind:src="data[0].image" />
     <div>{{ data[0].name }}</div>
+    <p v-if="product.inStock">In Stock</p>
+    <p v-else>Out of Stock</p>
     </div>
     
     <HelloWorld msg="Welcome to Your Vue.js App"/>
