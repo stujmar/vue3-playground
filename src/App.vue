@@ -1,6 +1,9 @@
 <template>
   <div class="m-4 p-4 shadaow border">
+    <div class="border-2 border-red-300 w-max">
+      <img width="200" v-bind:src="image" />
     <div>{{ product }}</div>
+    </div>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -15,7 +18,8 @@ export default {
   },
   data() {
     return {
-      product: 'Socks'
+      product: 'Socks',
+      image: './assets/eeyore.png'
     }
   }
 }
