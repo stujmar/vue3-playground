@@ -4,8 +4,8 @@
       <img width="200" v-bind:src="image" />
     <div>{{ product }}</div>
     </div>
-  <div v-for="product in data" :key="product.name" class="border-2 border-green-400">
-    <div class="border-2 border-red-300 w-max"></div>
+  <div v-for="product in data" :key="product.name" class="border-2 border-green-400 w-max">
+    <img class="border-2 border-red-300" :src="product.image" width=200 />
     {{ product.name }}
     <p v-if="product.inventory >= 10">{{product.inventory}} In Stock</p>
     <p v-else-if="product.inventory > 0 && product.inventory < 10">Only {{product.inventory}} Left. Running Low</p>
