@@ -4,13 +4,19 @@
       <img width="200" v-bind:src="image" />
     <div>{{ product }}</div>
     </div>
+
+     <div class="border-2 border-red-300 w-max">
+      <img width="200" v-bind:src="data[0].image" />
+    <div>{{ data[0].name }}</div>
+    </div>
+    
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HelloWorld from './components/HelloWorld.vue';
+import productData from './resources/productData';
 export default {
   name: 'App',
   components: {
@@ -19,7 +25,8 @@ export default {
   data() {
     return {
       product: 'Socks',
-      image: './assets/eeyore.png'
+      image: './assets/eeyore.png',
+      data: productData,
     }
   }
 }
