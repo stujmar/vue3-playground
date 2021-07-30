@@ -13,6 +13,11 @@ const productData = [ {
     image: './assets/squirtle_turtle.png',
     inventory: 6,
     },
+    {
+    name: "Door Knob",
+    image: './assets/eeyore.png',
+    inventory: 25,
+    },
 ];
 
 export default productData;

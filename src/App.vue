@@ -1,14 +1,14 @@
 <template>
-  <div class="m-4 p-4 shadaow border">
+  <div class="m-4 p-4 shadaow border flex justify-center gap-6">
     <div v-for="product in data" :key="product.name" class="border-2 border-green-400 w-max">
       <img class="border-2 border-red-300" :src="product.image" width=200 />
       {{ product.name }}
       <p v-if="product.inventory >= 10">{{product.inventory}} In Stock</p>
-      <p v-else-if="product.inventory > 0 && product.inventory < 10">Only {{product.inventory}} Left. Running Low</p>
+      <p v-else-if="product.inventory > 0 && product.inventory < 10">Only {{product.inventory}} Left.</p>
       <p v-else>Out of Stock</p>
     </div>    
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
