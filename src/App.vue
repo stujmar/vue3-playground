@@ -6,9 +6,16 @@
       <p v-if="product.inventory >= 10">{{product.inventory}} In Stock</p>
       <p v-else-if="product.inventory > 0 && product.inventory < 10">Only {{product.inventory}} Left.</p>
       <p v-else>Out of Stock</p>
-      <div class="flex gap-2 pl-2">
-        <div v-for="option in product.varients" :key="option.id" class="w-4 h-4 border border-black" :style="{background: option.color}"></div>
+      <div class="flex justify-between pr-2">
+        <div class="flex gap-2 pl-2">
+          <div v-for="option in product.varients" :key="option.id" class="w-4 h-4 border border-black" :style="{background: option.color}"></div>
+        </div>
+        <div class="flex gap-1 pl-2">
+          <div v-for="size in product.sizes" :key="size" class="text-sm text-gray-400 hover:text-gray-600 font-bold cursor-pointer">{{size}}</div>
+        </div>
       </div>
+
+
       <ul class="p-2 border border-green-200 m-1">
         <li 
           v-for="detail in product.details" 
