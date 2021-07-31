@@ -10,7 +10,7 @@
       <p v-else>Out of Stock</p>
       <div class="flex justify-between pr-2">
         <div class="flex gap-2 pl-2">
-          <div v-for="option in product.varients" :key="option.id" class="w-4 h-4 border border-black" :style="{background: option.color}"></div>
+          <div v-for="option in product.varients" :key="option.id" @mouseover="updateBorder(option.color)" class="w-4 h-4 border border-black" :style="{background: option.color}"></div>
         </div>
         <div class="flex gap-1 pl-2">
           <div v-for="size in product.sizes" :key="size" class="text-sm text-gray-400 hover:text-gray-600 font-bold cursor-pointer">{{size}}</div>
@@ -27,6 +27,7 @@
       </ul>
       <div v-if="product.onSale" class="shadow-lg absolute top-0 right-0 bg-yellow-300 font-bold p-1">On Sale!</div>
       <button v-on:click="addToCart()" class="px-2 mb-2 font-bold text-white shadow-md border border-green-500 mt-1 bg-green-400 hover:bg-green-500 rounded">Add to Cart</button>
+      <button v-on:click="removeFromCart()" class="px-2 mb-2 font-bold text-white shadow-md border border-green-500 mt-1 bg-green-400 hover:bg-green-500 rounded">Remove</button>
     </div>    
   </div>
   </div>
@@ -52,6 +53,12 @@ export default {
   methods: {
     addToCart() {
       this.cart.push("test");
+    },
+    removeFromCart() {
+      this.cart.splice(0,1);
+    },
+    updateBorder(color) {
+      console.log(color);
     }
   }
 }
