@@ -1,4 +1,5 @@
 const productData = [ {
+    id: 1,
     name: "Sponge Man",
     image: './assets/pikabob.png',
     inventory: 20,
@@ -11,6 +12,7 @@ const productData = [ {
     sizes: ["sm", "md", "lg", "xl"],
     },
     {
+    id: 2,
     name: "Cat Thing",
     image: './assets/meowthfield.png',
     inventory: 0,
@@ -23,6 +25,7 @@ const productData = [ {
     sizes: ["sm", "md", "lg", "xl"],
     },
     {
+    id: 3,
     name: "Turtler",
     image: './assets/squirtle_turtle.png',
     inventory: 6,
@@ -35,6 +38,7 @@ const productData = [ {
     sizes: ["sm", "md", "lg", "xl"],
     },
     {
+    id: 4,
     name: "Door Knob",
     image: './assets/eeyore.png',
     inventory: 25,
