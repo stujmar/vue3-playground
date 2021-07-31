@@ -29,8 +29,8 @@
       <button v-on:click="addToCart()" class="px-2 mb-2 font-bold text-white shadow-md border border-green-500 mt-1 bg-green-400 hover:bg-green-500 rounded">Add to Cart</button>
     </div>    
   </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
