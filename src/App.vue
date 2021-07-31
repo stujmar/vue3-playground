@@ -1,11 +1,12 @@
 <template>
   <div class="m-4 p-4 shadaow border flex justify-center gap-6">
-    <div v-for="product in data" :key="product.name" class="border-2 border-green-400 w-max">
-      <img class="border-2 border-red-300" :src="product.image" width=200 />
+    <div v-for="product in data" :key="product.name" class="border-2 border-green-400 w-max relative">
+      <img class="" :src="product.image" width=200 />
       {{ product.name }}
       <p v-if="product.inventory >= 10">{{product.inventory}} In Stock</p>
       <p v-else-if="product.inventory > 0 && product.inventory < 10">Only {{product.inventory}} Left.</p>
       <p v-else>Out of Stock</p>
+      <div v-if="product.onSale" class="shadow-lg absolute top-0 right-0 bg-yellow-300 font-bold p-1">On Sale!</div>
     </div>    
   </div>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
