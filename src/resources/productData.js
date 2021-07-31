@@ -38,8 +38,8 @@ const productData = [ {
     onSale: true,
     details: ['Horsey', 'Sad', 'Quadripedal'],
     varients: [
-        { id: 7, color: 'blue'},
-        { id: 8, color: 'green'},
+        { id: 7, color: 'lightblue'},
+        { id: 8, color: 'gray'},
     ],
     },
 ];
