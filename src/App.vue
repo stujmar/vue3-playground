@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     addToCart() {
-      console.log("added to cart");
+      this.cart.push("test");
     }
   }
 }
