@@ -8,6 +8,7 @@ const productData = [ {
         { id: 1, color: 'yellow'},
         { id: 2, color: 'orange'},
     ],
+    sizes: ["sm", "md", "lg", "xl"],
     },
     {
     name: "Cat Thing",
@@ -19,6 +20,7 @@ const productData = [ {
         { id: 3, color: 'brown'},
         { id: 4, color: 'white'},
     ],
+    sizes: ["sm", "md", "lg", "xl"],
     },
     {
     name: "Turtler",
@@ -30,6 +32,7 @@ const productData = [ {
         { id: 5, color: 'yellowgreen'},
         { id: 6, color: 'greenyellow'},
     ],
+    sizes: ["sm", "md", "lg", "xl"],
     },
     {
     name: "Door Knob",
@@ -41,6 +44,7 @@ const productData = [ {
         { id: 7, color: 'lightblue'},
         { id: 8, color: 'gray'},
     ],
+    sizes: ["sm", "md", "lg", "xl"],
     },
 ];
 
