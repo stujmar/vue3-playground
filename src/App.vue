@@ -1,5 +1,7 @@
 <template>
-  <div class="m-4 p-4 shadaow border flex justify-center gap-6">
+  <div class="border m-4">
+  <div class="border shadow rounded-md text-gray-500 ml-auto w-max mt-4 mr-4 px-2 py-1">Cart ({{cart.length}})</div>
+  <div class="m-4 p-4 shadaow flex justify-center gap-6">
     <div v-for="product in data" :key="product.name" class="border-2 border-green-400 w-max relative">
       <img class="" :src="product.image" width=200 />
       {{ product.name }}
@@ -28,6 +30,7 @@
     </div>    
   </div>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
@@ -43,6 +46,7 @@ export default {
       product: 'Socks',
       image: './assets/eeyore.png',
       data: productData,
+      cart: ["test", "test"],
     }
   },
   methods: {
@@ -60,6 +64,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
