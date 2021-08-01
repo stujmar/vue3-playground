@@ -66,9 +66,8 @@ export default {
       console.log(color);
     },
     changeStock(id, amount) {
-      let dataCopy = [ ...this.data];
-      let index = dataCopy.findIndex(product => product.id === id);
-      this.data[index].inventory = dataCopy[index].inventory + amount;
+      let index = this.data.findIndex(product => product.id === id);
+      this.data[index].inventory = this.data[index].inventory + amount;
     }
 
   }
