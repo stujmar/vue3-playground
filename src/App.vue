@@ -30,8 +30,12 @@
             >- {{detail}}</li>
         </ul>
         <div v-if="product.onSale" class="shadow-lg absolute top-0 right-0 bg-yellow-300 font-bold p-1">On Sale!</div>
-        <button v-if="product.inventory > 0" v-on:click="addToCart()" class="px-2 mb-2 font-bold text-white shadow-md border border-green-500 mt-1 bg-green-400 hover:bg-green-500 rounded">Add to Cart</button>
-        <button v-else class="px-2 mb-2 font-bold text-white shadow-md border border-gray-500 mt-1 bg-gray-400 hover:bg-gray-500 rounded">Out of Stock</button>
+        <button 
+           v-on:click="addToCart()"
+           :disabled="product.inventory === 0"
+           :class=" product.inventory === 0 ? 'bg-gray-300 border-gray-400' : 'bg-green-400 border-green-500'"
+           class="px-2 mb-2 font-bold text-white shadow-md border mt-1 hover:bg-green-500 rounded">Add to Cart</button>
+        <!-- <button v-else class="px-2 mb-2 font-bold text-white shadow-md border border-gray-500 mt-1 bg-gray-400 hover:bg-gray-500 rounded">Out of Stock</button> -->
         <button v-on:click="removeFromCart()" class="px-2 mb-2 font-bold text-white shadow-md border border-green-500 mt-1 bg-green-400 hover:bg-green-500 rounded">Remove</button>
       </div>    
     </div>
