@@ -52,6 +52,7 @@ export default {
       product: 'Socks',
       image: './assets/eeyore.png',
       data: productData,
+      activeProduct: {},
       cart: ["test", "test"],
     }
   },
@@ -60,7 +61,7 @@ export default {
       this.cart.push("test");
     },
     removeFromCart() {
-      this.cart.splice(0,1);
+      this.cart.pop()
     },
     updateBorder(color) {
       console.log(color);
@@ -68,8 +69,7 @@ export default {
     changeStock(id, amount) {
       let index = this.data.findIndex(product => product.id === id);
       this.data[index].inventory = this.data[index].inventory + amount;
-    }
-
+    },
   }
 }
 </script>
