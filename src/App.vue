@@ -3,7 +3,7 @@
 
     <div class="border shadow rounded-md text-gray-500 ml-auto w-max mt-4 mr-4 px-2 py-1">Cart ({{cart.length}})</div>
       <div class="m-4 p-4 shadaow flex justify-center gap-6">
-        <div v-for="product in data" :key="product.name" class="border-2 border-green-400 w-max relative">
+        <div v-for="product in data" :key="product.name" class="w-max relative rounded shadow" :style="{ border: `5px solid ${product.activeProductColor}`}">
           <div class="absolute">
             <button class="w-4 h-4 bg-white leading-3 rounded font-bold mr-2" @click="changeStock(product.id, 1)">+</button>
             <button class="w-4 h-4 bg-white leading-3 rounded font-bold" @click="changeStock(product.id, -1)">-</button>
@@ -63,8 +63,7 @@ export default {
       item.activeProductColor = item.varients[0].color;
       return item;
     })
-    console.log(storeData)
-    this.data = productData
+    this.data = storeData
   },
   data() {
     return {
