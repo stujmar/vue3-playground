@@ -47,16 +47,16 @@
       </div>    
     </div>
   </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <product-display message="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import ProductDisplay from './components/ProductDisplay.vue';
 import productData from './resources/productData';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ProductDisplay
   },
   computed: {
     title(product) {

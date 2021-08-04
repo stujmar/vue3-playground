@@ -1,5 +1,6 @@
 <template>
     <div>This is a Single Product</div>
+    {{ message }}
 </template>
 
 <script>
@@ -7,8 +8,12 @@
         name: "ProductDisplay",
         data () {
             return {
-                productData: {}
+                activeColor: {}
             }
+        },
+        props: {
+            productData: Object,
+            message: String,
         }
     }
 </script>
