@@ -15,7 +15,12 @@
           <p v-else>Out of Stock</p>
           <div class="flex justify-between pr-2">
             <div class="flex gap-2 pl-2">
-              <div v-for="option in product.varients" :key="option.id" @mouseover="updateBorder(option.color)" class="w-6 h-6 rounded-full border border-black" :style="{background: option.color}"></div>
+              <button 
+                v-for="option in product.varients"
+                :key="option.id"
+                @click="updateBorder(product.id, option.color)"
+                class="w-6 h-6 rounded-full border border-black"
+                :style="{background: option.color}"></button>
             </div>
             <div class="flex gap-1 pl-2">
               <div v-for="size in product.sizes" :key="size" class="text-sm text-gray-400 hover:text-gray-600 font-bold cursor-pointer">{{size}}</div>
@@ -80,8 +85,10 @@ export default {
     removeFromCart() {
       this.cart.pop()
     },
-    updateBorder(color) {
-      console.log(color);
+    updateBorder(id, color) {
+      let indexOne = this.data.findIndex(product => product.id === id);
+      console.log(id, color, indexOne);
+      this.data[indexOne].activeProductColor = color;
     },
     changeStock(id, amount) {
       let index = this.data.findIndex(product => product.id === id);
