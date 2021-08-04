@@ -9,7 +9,6 @@
             <button class="w-4 h-4 bg-white leading-3 rounded font-bold" @click="changeStock(product.id, -1)">-</button>
           </div>          
           <img class="" :src="product.image" width=200 />
-          {{ title }}
           {{ product.name }}
           <p v-if="product.inventory >= 10">{{product.inventory}} In Stock</p>
           <p v-else-if="product.inventory > 0 && product.inventory < 10">Only {{product.inventory}} Left.</p>
@@ -55,14 +54,22 @@ export default {
     HelloWorld
   },
   computed: {
-    title() {
-      return this.brand + ' ' + this.product.name;
+    title(product) {
+      return this.brand + ' ' + `${product}`;
     }
+  },
+  mounted() {
+    let storeData = productData.map((item) => {
+      item.activeProductColor = item.varients[0].color;
+      return item;
+    })
+    console.log(storeData)
+    this.data = productData
   },
   data() {
     return {
       brand: "GoStuGo",
-      data: productData,
+      data: [],
       activeProduct: {},
       cart: ["test", "test"],
     }
