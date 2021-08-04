@@ -14,6 +14,9 @@
         props: {
             productData: Object,
             message: String,
-        }
+        },
+        mounted() {
+            console.log(this.productData)
+        },
     }
 </script>

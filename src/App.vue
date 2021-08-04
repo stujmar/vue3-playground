@@ -47,7 +47,9 @@
       </div>    
     </div>
   </div>
-    <product-display message="Welcome to Your Vue.js App"/>
+    <product-display 
+      :productData="{hello: 'world'}"
+      message="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
