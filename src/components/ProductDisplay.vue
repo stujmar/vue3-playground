@@ -62,6 +62,9 @@
                 console.log(color);
                 this.activeColor = color;
             },
+            addToCart() {
+                this.$emit('add-too-cart');
+            }
         },
         mounted() {
         },
