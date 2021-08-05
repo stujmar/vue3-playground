@@ -63,7 +63,8 @@
                 this.activeColor = color;
             },
             addToCart() {
-                this.$emit('add-too-cart');
+                console.log('component level');
+                this.$emit('add-to-cart');
             }
         },
         mounted() {

@@ -9,6 +9,7 @@
         v-for="product in data"
         :key="product.id"
         :product="product"
+        @add-to-cart="addToCart()"
         message="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -43,6 +44,7 @@ export default {
   },
   methods: {
     addToCart() {
+      console.log('parent level');
       this.cart.push("test");
     },
     removeFromCart() {
