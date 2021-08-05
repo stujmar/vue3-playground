@@ -10,6 +10,7 @@
         :key="product.id"
         :product="product"
         @add-to-cart="addToCart()"
+        @remove-from-cart="removeFromCart()"
         message="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -44,7 +45,6 @@ export default {
   },
   methods: {
     addToCart() {
-      console.log('parent level');
       this.cart.push("test");
     },
     removeFromCart() {
@@ -52,7 +52,6 @@ export default {
     },
     updateBorder(id, color) {
       let indexOne = this.data.findIndex(product => product.id === id);
-      console.log(id, color, indexOne);
       this.data[indexOne].activeProductColor = color;
     },
     changeStock(id, amount) {

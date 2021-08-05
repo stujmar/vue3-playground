@@ -63,8 +63,10 @@
                 this.activeColor = color;
             },
             addToCart() {
-                console.log('component level');
                 this.$emit('add-to-cart');
+            },
+            removeFromCart() {
+                this.$emit('remove-from-cart');
             }
         },
         mounted() {
