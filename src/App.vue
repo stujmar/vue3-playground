@@ -1,9 +1,11 @@
 <template>
-  <div class="border m-4">
+    <div class="border shadow rounded-md text-gray-500 ml-auto w-max mt-4 mr-4 px-2 py-1">
+      Cart ({{cart.length}})
+    </div>
+      
+    <div class="m-4 p-4 shadaow flex justify-center gap-6">
 
-    <div class="border shadow rounded-md text-gray-500 ml-auto w-max mt-4 mr-4 px-2 py-1">Cart ({{cart.length}})</div>
-      <div class="m-4 p-4 shadaow flex justify-center gap-6">
-        <div v-for="product in data" :key="product.name" class="w-max relative rounded shadow" :style="{ border: `5px solid ${product.activeProductColor}`}">
+      <div v-for="product in data" :key="product.name" class="w-max relative rounded shadow" :style="{ border: `5px solid ${product.activeProductColor}`}">
           <div class="absolute">
             <button class="w-4 h-4 bg-white leading-3 rounded font-bold mr-2" @click="changeStock(product.id, 1)">+</button>
             <button class="w-4 h-4 bg-white leading-3 rounded font-bold" @click="changeStock(product.id, -1)">-</button>
@@ -25,7 +27,7 @@
             <div class="flex gap-1 pl-2">
               <div v-for="size in product.sizes" :key="size" class="text-sm text-gray-400 hover:text-gray-600 font-bold cursor-pointer">{{size}}</div>
             </div>
-          </div>
+        </div>
 
 
         <ul class="p-2 border border-green-200 m-1">
@@ -44,12 +46,16 @@
            class="px-2 mb-2 font-bold text-white shadow-md border mt-1 hover:bg-green-500 rounded"></button>
         <!-- <button v-else class="px-2 mb-2 font-bold text-white shadow-md border border-gray-500 mt-1 bg-gray-400 hover:bg-gray-500 rounded">Out of Stock</button> -->
         <button v-on:click="removeFromCart()" class="px-2 mb-2 font-bold text-white shadow-md border border-green-500 mt-1 bg-green-400 hover:bg-green-500 rounded">Remove</button>
-      </div>    
+      </div> 
+
     </div>
-  </div>
+
     <product-display 
+      v-for="product in data"
+      :key="product.id"
       :productData="{hello: 'world'}"
       message="Welcome to Your Vue.js App"/>
+
 </template>
 
 <script>
