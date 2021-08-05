@@ -62,7 +62,6 @@
             },
         },
         mounted() {
-            console.log(this.productData)
         },
     }
 </script>
