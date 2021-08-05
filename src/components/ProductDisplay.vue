@@ -1,5 +1,5 @@
 <template>
-      <div class="w-max relative rounded shadow" :style="{ border: `5px solid ${product.activeProductColor}`}">
+      <div class="w-max relative rounded shadow" :style="{ border: `5px solid ${activeColor}`}">
           <div class="absolute">
             <button class="w-4 h-4 bg-white leading-3 rounded font-bold mr-2" @click="changeStock(product.id, 1)">+</button>
             <button class="w-4 h-4 bg-white leading-3 rounded font-bold" @click="changeStock(product.id, -1)">-</button>
@@ -48,7 +48,7 @@
         name: "ProductDisplay",
         data () {
             return {
-                activeColor: {}
+                activeColor: this.product.varients[0].color
             }
         },
         props: {
