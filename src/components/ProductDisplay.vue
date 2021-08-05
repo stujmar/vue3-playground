@@ -63,7 +63,7 @@
                 this.activeColor = color;
             },
             addToCart() {
-                this.$emit('add-to-cart');
+                this.$emit('add-to-cart', this.product.id);
             },
             removeFromCart() {
                 this.$emit('remove-from-cart');

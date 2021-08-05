@@ -9,8 +9,8 @@
         v-for="product in data"
         :key="product.id"
         :product="product"
-        @add-to-cart="addToCart()"
-        @remove-from-cart="removeFromCart()"
+        @add-to-cart="addToCart"
+        @remove-from-cart="removeFromCart"
         message="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -40,12 +40,12 @@ export default {
       brand: "GoStuGo",
       data: [],
       activeProduct: {},
-      cart: ["test", "test"],
+      cart: [],
     }
   },
   methods: {
-    addToCart() {
-      this.cart.push("test");
+    addToCart(productId) {
+      this.cart.push(productId);
     },
     removeFromCart() {
       this.cart.pop()
