@@ -5,7 +5,7 @@ const productData = [ {
     inventory: 20,
     onSale: false,
     details: ['Yellow', 'Soft', 'Absorbent'],
-    varients: [
+    variants: [
         { id: 1, color: 'yellow'},
         { id: 2, color: 'orange'},
     ],
@@ -18,7 +18,7 @@ const productData = [ {
     inventory: 0,
     onSale: false,
     details: ['Mondays', 'Hairballs', 'Frisky'],
-    varients: [
+    variants: [
         { id: 3, color: 'brown'},
         { id: 4, color: 'white'},
     ],
@@ -31,7 +31,7 @@ const productData = [ {
     inventory: 6,
     onSale: false,
     details: ['Shelled', 'Pizza', 'Souped'],
-    varients: [
+    variants: [
         { id: 5, color: 'yellowgreen'},
         { id: 6, color: 'greenyellow'},
     ],
@@ -44,7 +44,7 @@ const productData = [ {
     inventory: 25,
     onSale: true,
     details: ['Horsey', 'Sad', 'Quadripedal'],
-    varients: [
+    variants: [
         { id: 7, color: 'lightblue'},
         { id: 8, color: 'gray'},
     ],

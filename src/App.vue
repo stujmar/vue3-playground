@@ -18,7 +18,7 @@
           <div class="flex justify-between pr-2">
             <div class="flex gap-2 pl-2">
               <button 
-                v-for="option in product.varients"
+                v-for="option in product.variants"
                 :key="option.id"
                 @click="updateBorder(product.id, option.color)"
                 class="w-6 h-6 rounded-full border border-black"
@@ -73,7 +73,7 @@ export default {
   },
   mounted() {
     let storeData = productData.map((item) => {
-      item.activeProductColor = item.varients[0].color;
+      item.activeProductColor = item.variants[0].color;
       return item;
     })
     this.data = storeData

@@ -12,9 +12,9 @@
           <div class="flex justify-between pr-2">
             <div class="flex gap-2 pl-2">
               <button 
-                v-for="option in product.varients"
+                v-for="option in product.variants"
                 :key="option.id"
-                @click="updateBorder(product.id, option.color)"
+                @click="updateBorder(option.color)"
                 class="w-6 h-6 rounded-full border border-black"
                 :style="{background: option.color}"></button>
             </div>
@@ -48,12 +48,18 @@
         name: "ProductDisplay",
         data () {
             return {
-                activeColor: this.product.varients[0].color
+                activeColor: this.product.variants[0].color
             }
         },
         props: {
             product: Object,
             message: String,
+        },
+        methods: {
+            updateBorder(color) {
+                console.log(color);
+                this.activeColor = color;
+            },
         },
         mounted() {
             console.log(this.productData)
