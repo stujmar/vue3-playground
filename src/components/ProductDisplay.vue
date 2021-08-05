@@ -23,6 +23,7 @@
             </div>
         </div>
 
+        <div v-if="premium">this is a premium product</div>
 
         <ul class="p-2 border border-green-200 m-1">
           <li 
@@ -54,6 +55,7 @@
         props: {
             product: Object,
             message: String,
+            premium: Boolean,
         },
         methods: {
             updateBorder(color) {
