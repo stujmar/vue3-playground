@@ -49,13 +49,13 @@
       </div> 
 
     </div>
-
-    <product-display 
-      v-for="product in data"
-      :key="product.id"
-      :productData="{hello: 'world'}"
-      message="Welcome to Your Vue.js App"/>
-
+  <div class="m-4 p-4 shadaow flex justify-center gap-6">
+      <product-display 
+        v-for="product in data"
+        :key="product.id"
+        :product="product"
+        message="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
