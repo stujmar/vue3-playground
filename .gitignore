@@ -1,6 +1,6 @@
-node_modules
-*.log
-.nuxt
-nuxt.d.ts
-.output
-.env
+nuxt-three/node_modules
+nuxt-three/*.log
+nuxt-three/.nuxt
+nuxt-three/nuxt.d.ts
+nuxt-three/.output
+nuxt-three/.env
