@@ -1,7 +1,8 @@
 <template>
   <div>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld :msg="msg"/>
+<!--     <h1>Hello World</h1>
+    <p>This is the app.vue</p> -->
+    <Show />
   <button :onClick="toggleVisibility" >Check if Vue is working</button>
   <div v-if="isVisible">
     <p>It is!</p>
@@ -10,12 +11,12 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Show from './components/Show.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Show
   },
   data() {
     return {
