@@ -1,36 +1,13 @@
-<template>
-  <div>
-<!--     <h1>Hello World</h1>
-    <p>This is the app.vue</p> -->
-    <Show />
-  <button :onClick="toggleVisibility" >Check if Vue is working</button>
-  <div v-if="isVisible">
-    <p>It is!</p>
-  </div>
-  </div>
-</template>
-
-<script>
-import Show from './components/Show.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Show
-  },
-  data() {
-    return {
-      msg: 'Welcome to My Vue.js App',
-      isVisible: false
-    }
-  },
-  methods: {
-    toggleVisibility() {
-      this.isVisible = !this.isVisible
-    }
-  }
-}
+<script setup>
+// This starter template is using Vue 3 <script setup> SFCs
+// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import HelloWorld from './components/HelloWorld.vue'
 </script>
+
+<template>
+  <img alt="Vue logo" class="mx-auto" src="./assets/logo.png" />
+  <HelloWorld msg="Hello Vue 3 + Vite" />
+</template>
 
 <style>
 #app {
