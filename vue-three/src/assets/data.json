@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Vue",
+    "definition": "A JavaScript framework for building user interfaces",
+    "id": 1
+  },
+  {
+    "name": "Three.js",
+    "definition": "A JavaScript 3D library for building interactive 3D applications",
+    "id": 2
+  },
+  {
+    "name": "Vuex",
+    "definition": "A state management library for Vue.js applications",
+    "id": 3
+  },
+  {
+    "name": "Vue Router",
+    "definition": "A router for Vue.js applications",
+    "id": 4
+  }
+]
