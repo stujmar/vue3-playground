@@ -3,9 +3,14 @@
     <h1 v-text="msg"></h1>
     <div class="border my10">
       <h2 v-text="flipped ? '' : cards[0].name"></h2>
+      <h2 v-html="flipped ? cards[0].definition : ''"></h2>
     </div>
+      <button type="button" @click="flipCard()">
+        {{ flipped ? 'Flip' : 'Show' }}
+      </button>
     <div v-for="card in cards" :key="card.id" class="border w-max mx-auto m-2 px-2">
       <div v-text="card.name"></div>
+      <!-- button to flip card -->
     </div>
   </div>
 </template>
@@ -19,6 +24,11 @@ import cards from '../assets/data.json';
         msg: "hello from Flashcard.vue",
         cards: cards,
         flipped: false
+      }
+    },
+    methods: {
+      flipCard() {
+        this.flipped = !this.flipped;
       }
     }
   }
