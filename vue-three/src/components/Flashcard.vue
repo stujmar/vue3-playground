@@ -12,6 +12,7 @@
       <div v-text="card.name"></div>
       <!-- button to flip card -->
     </div>
+  <a class="w-full text-center text-sm text-gray-400" :href="readMoreUrl">Read more</a>
   </div>
 </template>
 
@@ -23,7 +24,8 @@ import cards from '../assets/data.json';
       return {
         msg: "hello from Flashcard.vue",
         cards: cards,
-        flipped: false
+        flipped: false,
+        readMoreUrl: 'https://vitejs.dev/guide/features.html'
       }
     },
     methods: {
