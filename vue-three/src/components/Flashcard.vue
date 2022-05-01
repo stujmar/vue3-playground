@@ -1,6 +1,11 @@
 <template>
   <div>
     <h1 v-text="msg"></h1>
+    <div v-text="amperTest"></div>
+    <div id="boop">borp
+      <div>bingo</div>
+    </div>
+    <div v-html="amperTest"></div>
     <div class="border my10">
       <h2 v-text="flipped ? '' : cards[0].name"></h2>
       <h2 v-html="flipped ? cards[0].definition : ''"></h2>
@@ -25,7 +30,8 @@ import cards from '../assets/data.json';
         msg: "hello from Flashcard.vue",
         cards: cards,
         flipped: false,
-        readMoreUrl: 'https://vitejs.dev/guide/features.html'
+        readMoreUrl: 'https://vitejs.dev/guide/features.html',
+        amperTest: "Jack &amp; Jill"
       }
     },
     methods: {
