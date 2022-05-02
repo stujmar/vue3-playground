@@ -6,6 +6,7 @@
       <div>bingo</div>
     </div>
     <div v-html="amperTest"></div>
+    <input class="border m-2 px-1" type="text" v-model="userInput" />
     <div class="border my10">
       <h2 v-text="flipped ? '' : cards[0].name"></h2>
       <h2 v-html="flipped ? cards[0].definition : ''"></h2>
@@ -31,7 +32,8 @@ import cards from '../assets/data.json';
         cards: cards,
         flipped: false,
         readMoreUrl: 'https://vitejs.dev/guide/features.html',
-        amperTest: "Jack &amp; Jill"
+        amperTest: "Jack &amp; Jill",
+        userInput: "default",
       }
     },
     methods: {
