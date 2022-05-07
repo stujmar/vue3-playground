@@ -1,14 +1,22 @@
 <template>
   <div>
-    <div class="relative border m-4 font-bold h-40 w-90 text-xl bg-gray-100 shadow-md">
+    <div class="relative border m-4 font-bold h-40 w-90 text-xl bg-white shadow-md">
       <div class="absolute inset-0 m-auto h-min">
         {{ flipped ? cards[index].definition : cards[index].name }}
       </div>
     </div>
     <div class="flex gap-4 w-max h-min mt-4 mx-auto">
-      <button class="font-bold" v-text="`<=`" @click="indexBack"></button>
-      <button type="button" class="font-bold" v-text="`flip`" @click="flipCard"></button>
-      <button class="font-bold" v-text="`=>`" @click="indexForward"></button>
+      <button class="font-bold" @click="indexBack">
+        <svg xmlns="http://www.w3.org/2000/svg" :class="`${isFirstCard(index) ? 'text-blue-500' : 'text-white'} h-6 w-6`" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button type="button" class="text-xl uppercase text-white text-shadow-blue" v-text="`flip`" @click="flipCard"></button>
+      <button class="font-bold" @click="indexForward">
+        <svg xmlns="http://www.w3.org/2000/svg" :class="`${isLastCard(index) ? 'text-blue-500' : 'text-white'} h-6 w-6`" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
  </div>
 </template>
@@ -41,6 +49,12 @@ import cards from '../assets/data.json';
         this.flipped  = false;
         this.index > 0 ? this.index-- : this.index = this.index;
       },
+      isFirstCard(index) {
+        return index === 0;
+      },
+      isLastCard(index) {
+        return index === this.cards.length - 1;
+      }
     }
   }
 </script>

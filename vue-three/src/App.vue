@@ -6,8 +6,8 @@ import Flashcard from './components/Flashcard.vue';
 </script>
 
 <template>
-  <div>
-    <img alt="Vue logo" class="mx-auto" src="./assets/logo.png" />
+  <div class="bg-blue-400 h-screen">
+    
     <HelloWorld msg="Hello Vue 3 + Vite" />
     <Flashcard />
   </div>
@@ -20,6 +20,5 @@ import Flashcard from './components/Flashcard.vue';
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
