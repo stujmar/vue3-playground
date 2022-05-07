@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Rotate />
     <div class="relative border m-4 font-bold h-40 w-90 text-xl bg-white shadow-md">
       <div class="absolute inset-0 m-auto h-min">
         {{ flipped ? cards[index].definition : cards[index].name }}
@@ -23,8 +24,12 @@
 
 <script>
 import cards from '../assets/data.json';
+import Rotate from './Rotate.vue';
 
   export default {
+    components: {
+      Rotate
+    },
     data() {
       return {
         msg: "hello from Flashcard.vue",
