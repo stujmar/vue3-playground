@@ -1,6 +1,6 @@
 <template>
   <div class="box mx-auto relative">
-    <span class="absolute h-min inset-0 m-auto text-purple-50">Rotate me</span>
+    <span class="absolute text-center h-min inset-0 m-auto text-purple-50">Rotate me</span>
   </div>
 </template>
 
