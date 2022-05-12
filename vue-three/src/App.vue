@@ -7,7 +7,6 @@ import Flashcard from './components/Flashcard.vue';
 
 <template>
   <div class="bg-blue-400 h-screen">
-    
     <NavBar heading="CSS Animation" />
     <Flashcard />
     <router-view></router-view>
