@@ -6,7 +6,12 @@
         v-for="location in locations"
         class="flex w-max mx-auto"
         :key="location.id">
-        <router-link class="font-medium text-xl text-blue-900 hover:text-blue-600" :to="'/location/' + location.slug">{{ location.name }}</router-link>
+        <div>
+        <router-link class="font-medium text-xl text-blue-900 hover:text-blue-600" :to="'/location/' + location.slug">
+        <span>{{ location.name }}</span>
+        <img width="200" :src="'/images/' + location.image">
+        </router-link>
+        </div>
       </li>
     </ul>
   </div>
