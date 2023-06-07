@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 Basics</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+        .box-blue {
+            background-color: blue;
+        }
+        .box-red {
+            background-color: red;
+        }
+        .box-green {
+            background-color: green;
+        }
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        {{ greeting }}
+        <br>
+        <input v-model="greeting" />
+        <hr>
+        <div v-if="isVisible" class="box box-red"></div>
+        <div v-else-if="isVisibleTwo" class="box box-green"></div>
+        <div v-else class="box box-blue"></div>
+        <button @click="toggleBox" style="margin-top: 5px;">toggle box</button>
+        <br>
+        <input @keyup.enter="greet(message)" v-model="message" style="margin-top: 10px;" />
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    isVisible: false,
+                    isVisibleTwo: true,
+                    greeting: "Hello from data.",
+                    message: 'Hello Vue 3'
+                }
+            },
+            methods: {
+                toggleBox() {
+                    this.isVisible = !this.isVisible;
+                },
+                greet(x) {
+                    alert(x);
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
