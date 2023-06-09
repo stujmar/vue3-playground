@@ -36,6 +36,7 @@
         <button @click.right="toggleBox" style="margin-top: 5px;">right click me</button>
         <br>
         <input @keyup.enter="greet(message)" v-model="message" style="margin-top: 10px;" />
+        <login-form />
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
@@ -56,6 +57,36 @@
                     alert(x);
                 }
             }
+        });
+        app.component('login-form', {
+            template: `
+            <form @submit="handleSubmit">
+                <h3>{{ title }}</h3>
+                <input v-model="name" />
+                <input v-model="age" />
+                <p>Name: {{ name }}</p>
+                <p>Age: {{ age }}</p>
+                <button type="submit">Submit</button>
+            </form>
+                `,
+            data: function() {
+                return {
+                    title: 'Login Form',
+                    name: 'John Doe',
+                    age: 30
+                }
+            },
+            methods: {
+                submitForm() {
+                    alert('Form submitted.');
+                },
+                handleSubmit(e) {
+                    e.preventDefault();
+                    console.log('Form submitted.');
+                }
+            }
+
+
         });
         app.mount('#app');
     </script>
