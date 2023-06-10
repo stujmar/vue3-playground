@@ -62,17 +62,27 @@
             template: `
             <form @submit="handleSubmit">
                 <h3>{{ title }}</h3>
+                <label for="name">Name</label>
                 <input v-model="name" />
-                <input v-model="age" />
-                <p>Name: {{ name }}</p>
-                <p>Age: {{ age }}</p>
-                <button type="submit">Submit</button>
+                <br>
+                <label for="age">Age</label>
+                <input v-model="age" /><br>
+                <label for="password">Password</label>
+                <input type="password" v-model="password" />
+                <button type="submit">Submit</button><br>
+                <hr>
+                <custom-input v-model="email" :label="emailLabel" />
+                <custom-input v-model="password" :label="passwordLabel" />
             </form>
                 `,
             data: function() {
                 return {
                     title: 'Login Form',
                     name: 'John Doe',
+                    email: 'test',
+                    emailLabel: 'Email',
+                    password: 'password',
+                    passwordLabel: 'Password',
                     age: 30
                 }
             },
@@ -81,6 +91,8 @@
                     alert('Form submitted.');
                 },
                 handleSubmit(e) {
+                    console.log(e)
+                    console.log(this.name, this.age, this.password)
                     e.preventDefault();
                     console.log('Form submitted.');
                 }
@@ -88,6 +100,29 @@
 
 
         });
+        app.component('custom-input',{
+            template: `
+            <label>
+                {{ label }}
+                <input type="text" v-model="inputValue">
+            </label><br>
+            `,
+            props: ['label', 'modelValue'],
+            computed: {
+                inputValue: {
+                    get() {
+                        return this.modelValue
+                    },
+                    set() {
+                    }
+                }
+            },
+            // data: function() {
+            //     return {
+            //         inputValue: ''
+            //     }
+            // }
+        })
         app.mount('#app');
     </script>
 </body>
