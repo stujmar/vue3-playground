@@ -60,68 +60,53 @@
         });
         app.component('login-form', {
             template: `
-            <form @submit="handleSubmit">
+            <form @submit.prevent="handleSubmit">
                 <h3>{{ title }}</h3>
-                <label for="name">Name</label>
-                <input v-model="name" />
-                <br>
-                <label for="age">Age</label>
-                <input v-model="age" /><br>
-                <label for="password">Password</label>
-                <input type="password" v-model="password" />
-                <button type="submit">Submit</button><br>
-                <hr>
                 <custom-input v-model="email" :label="emailLabel" />
                 <custom-input v-model="password" :label="passwordLabel" />
+                <button>Submit</button><br>
             </form>
                 `,
+            components: ['custom-input'],
             data: function() {
                 return {
                     title: 'Login Form',
-                    name: 'John Doe',
-                    email: 'test',
+                    email: '',
                     emailLabel: 'Email',
-                    password: 'password',
+                    password: '',
                     passwordLabel: 'Password',
-                    age: 30
                 }
             },
             methods: {
-                submitForm() {
-                    alert('Form submitted.');
-                },
                 handleSubmit(e) {
-                    console.log(e)
-                    console.log(this.name, this.age, this.password)
-                    e.preventDefault();
+                    console.log(this.email, this.password)
+                    // e.preventDefault();
                     console.log('Form submitted.');
                 }
             }
 
 
         });
-        app.component('custom-input',{
+        app.component('custom-input', {
             template: `
-            <label>
-                {{ label }}
-                <input type="text" v-model="inputValue">
-            </label><br>
+                <label>
+                    {{ label }}
+                    <input type="text" v-model="inputValue">
+                </label>
             `,
             props: ['label', 'modelValue'],
             computed: {
                 inputValue: {
                     get() {
+                        console.log('get')
                         return this.modelValue
                     },
-                    set() {
+                    set(value) {
+                        console.log(value)
+                        this.$emit('update:modelValue', value)
                     }
                 }
-            },
-            // data: function() {
-            //     return {
-            //         inputValue: ''
-            //     }
-            // }
+            }
         })
         app.mount('#app');
     </script>
