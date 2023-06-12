@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Life Cycle</title>
+    <style>
+        .box {
+            background-color: purple;
+            height: 150px;
+            margin: 10px auto;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="toggleBox">Toggle Box</button>
+        <test-box v-if="isVisible" />
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    isVisible: false
+                }
+            },
+            methods: {
+                toggleBox() {
+                    this.isVisible = !this.isVisible;
+                }
+            }
+        })
+        app.component('test-box', {
+            template: `<div class="box">{{ number }}
+                <button @click="updateNumber">Update Number</button>
+                </div>`,
+            data: function() {
+                return {
+                    number: 0
+                }
+            },
+            methods: {
+                updateNumber() {
+                    this.number++;
+                }
+            },
+            beforeCreate() {
+                console.log('1: beforeCreate()');
+            },
+            created() {
+                console.log('2: created()');
+            },
+            beforeMount() {
+                console.log('3: beforeMount()');
+            },
+            mounted() {
+                console.log('4: mounted()');
+            },
+            beforeUpdate() {
+                console.log('5: beforeUpdate()');
+            },
+            updated() {
+                console.log('6: updated()');
+            },
+            beforeUnmount() {
+                console.log('7: beforeUnmount()');
+            },
+            unmounted() {
+                console.log('8: unmounted()');
+            }
+        })
+        app.mount('#app');
+    </script>
+</body>
+</html>
