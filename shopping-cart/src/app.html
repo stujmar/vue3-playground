@@ -23,7 +23,7 @@
             <span>Past Orders</span>
           </a>
         </nav>
-        <a href="#" class="top-bar-cart-link">
+        <a href="#" @click="toggleSidebar" class="top-bar-cart-link">
           <i class="icofont-cart-alt icofont-1x"></i>
           <span>Cart (0)</span>
         </a>
@@ -164,7 +164,7 @@
         </div>
 
       </main>
-      <sidebar />
+      <sidebar v-if="showSidebar" :toggle="toggleSidebar"/>
       <footer>
       </footer>
 
@@ -175,6 +175,7 @@
       let app = Vue.createApp({
         data() {
           return {
+            showSidebar: false,
             inventory: {
               carrots: 0,
               pineapples: 0,
@@ -191,10 +192,19 @@
           addToCart(type) {
             this.cart[type] += this.inventory[type]
             console.log(this.cart)
+          },
+          toggleSidebar() {
+            this.showSidebar = !this.showSidebar
           }
         }
       })
       app.component('sidebar', {
+        // methods: {
+        //   toggleSidebar() {
+        //     this.$emit('toggle-sidebar')
+        //   }
+        // },
+        props: ['toggle'],
         template:
         `<aside class="cart-container">
           <div class="cart">
@@ -203,7 +213,7 @@
                 Cart
                 <i class="icofont-cart-alt icofont-1x"></i>
               </span>
-              <button class="cart-close">&times;</button>
+              <button @click="toggle" class="cart-close">&times;</button>
             </h1>
 
             <div class="cart-body">
