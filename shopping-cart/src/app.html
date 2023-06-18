@@ -164,7 +164,11 @@
         </div>
 
       </main>
-      <sidebar v-if="showSidebar" :toggle="toggleSidebar"/>
+      <sidebar
+        v-if="showSidebar"
+        :toggle="toggleSidebar"
+        :cart="cart"
+      />
       <footer>
       </footer>
 
@@ -204,7 +208,7 @@
         //     this.$emit('toggle-sidebar')
         //   }
         // },
-        props: ['toggle'],
+        props: ['toggle', 'cart'],
         template:
         `<aside class="cart-container">
           <div class="cart">
