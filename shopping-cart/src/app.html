@@ -180,6 +180,7 @@
         data() {
           return {
             showSidebar: false,
+            taxRate: 1.1,
             inventory: {
               carrots: 0,
               pineapples: 0,
@@ -211,7 +212,7 @@
         props: ['toggle', 'cart'],
         computed: {
           cartTotal() {
-            return ((this.cart.carrots * 4.82) * 1.1).toFixed(2) // 10% tax
+            return ((this.cart.carrots * 4.82) * this.taxRate).toFixed(2) // 10% tax
           }
         },
         template:
