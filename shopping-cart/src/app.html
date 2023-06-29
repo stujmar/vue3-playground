@@ -181,16 +181,7 @@
           return {
             showSidebar: false,
             taxRate: 1.1,
-            inventory: {
-              carrots: 0,
-              pineapples: 0,
-              cherries: 0
-            },
-            cart: {
-              carrots: 0,
-              pineapples: 0,
-              cherries: 0
-            }
+            inventory: []
           }
         },
         methods: {
@@ -201,6 +192,12 @@
           toggleSidebar() {
             this.showSidebar = !this.showSidebar
           }
+        },
+        async mounted() {
+          console.log('App mounted!')
+          const res = await fetch('./food.json');
+          const data = await res.json();
+          this.inventory = data;
         }
       })
       app.component('sidebar', {
